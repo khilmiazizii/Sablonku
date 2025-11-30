@@ -1,0 +1,322 @@
+/* css/style.css */
+
+:root {
+    --primary-color: #2563eb; /* Biru Modern */
+    --primary-dark: #1e40af;
+    --accent-color: #f59e0b; /* Kuning/Emas untuk highlight */
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f3f4f6;
+    --white: #ffffff;
+    --radius: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins sepenuhnya */
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* --- Hero Section (Home) --- */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 120px 0 100px;
+    overflow: hidden;
+    margin-bottom: 0;
+    z-index: 1; /* PERBAIKAN: Membuat konteks tumpukan baru */
+}
+
+/* Pola background opsional */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: -1; /* PERBAIKAN: Meletakkan pola di BELAKANG konten */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-image {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    transform: rotate(-2deg);
+    border: 5px solid rgba(255,255,255,0.2);
+}
+
+/* Tambahan efek hover untuk link kontak */
+.hover-primary:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline !important;
+    transition: color 0.2s ease;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline-light {
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+}
+
+/* --- Section Styling --- */
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-weight: 800;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* --- Cards (Produk & Portfolio) --- */
+.product-card {
+    background: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+}
+
+.bg-primary-light {
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+/* --- Pricing Table (Harga) --- */
+.pricing-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+.pricing-card.popular {
+    border-color: var(--accent-color);
+    position: relative;
+}
+
+.pricing-card.popular::before {
+    content: 'Terlaris';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+/* --- Contact & Form --- */
+.info-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}
+
+.info-list li {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-list i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* --- Footer --- */
+.footer-dark {
+    background-color: #111827;
+    color: #9ca3af;
+    padding: 60px 0 30px;
+}
+
+.footer-brand {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-heading {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.footer-dark a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-dark a:hover {
+    color: var(--white);
+}
+
+.footer-dark li {
+    margin-bottom: 10px;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-image {
+        margin-top: 30px;
+        transform: rotate(0);
+    }
+}
