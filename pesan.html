@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan - Sablonku</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-palette-fill me-2"></i>Sablonku</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="harga.html">Harga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-primary btn-sm px-4" href="pesan.html">Pesan Sekarang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h2>Formulir Pemesanan</h2>
+                        <p>Isi data di bawah ini, pesanan akan otomatis diteruskan ke WhatsApp Admin.</p>
+                    </div>
+
+                    <div class="form-container">
+                        <form id="waForm">
+                            <h5 class="fw-bold mb-4 text-primary"><i class="bi bi-person-lines-fill me-2"></i>Data Pemesan</h5>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nama" class="form-label small fw-bold">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="nama" placeholder="Contoh: Budi Santoso" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="whatsapp" class="form-label small fw-bold">Nomor WhatsApp</label>
+                                    <input type="tel" class="form-control" id="whatsapp" placeholder="Contoh: 0812xxxx" required>
+                                </div>
+                            </div>
+
+                            <h5 class="fw-bold mt-4 mb-4 text-primary"><i class="bi bi-tshirt-fill me-2"></i>Detail Pesanan</h5>
+
+                            <div class="mb-3">
+                                <label for="kaosType" class="form-label small fw-bold">Jenis Kaos & Sablon</label>
+                                <select class="form-select" id="kaosType" required>
+                                    <option value="" selected disabled>-- Pilih Paket --</option>
+                                    <option value="Combed 30s + DTF (Satuan)">Combed 30s + DTF (Satuan)</option>
+                                    <option value="Combed 24s + Plastisol (Min 12)">Combed 24s + Plastisol (Min 12 pcs)</option>
+                                    <option value="Jasa Sablon Saja">Hanya Jasa Sablon (Bawa Kaos Sendiri)</option>
+                                    <option value="Lainnya">Lainnya (Tanya Admin)</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="jumlah" class="form-label small fw-bold">Jumlah (pcs)</label>
+                                    <input type="number" class="form-control" id="jumlah" value="1" min="1" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="warna" class="form-label small fw-bold">Warna Kaos</label>
+                                    <input type="text" class="form-control" id="warna" placeholder="Contoh: Hitam & Putih">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label small fw-bold">Alamat Pengiriman</label>
+                                <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat lengkap untuk pengiriman paket..." required></textarea>
+                            </div>
+
+                            <div class="alert alert-warning small d-flex align-items-center mt-4">
+                                <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                                <div>
+                                    <strong>Penting:</strong> Siapkan file desain Anda (format PNG/PDF/Corel) untuk dikirimkan setelah chat WhatsApp terbuka.
+                                </div>
+                            </div>
+
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-success btn-lg shadow">
+                                    <i class="bi bi-whatsapp me-2"></i>Kirim Pesanan via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-brand">Sablonku</h5>
+                    <p class="small">Mitra terpercaya kebutuhan sablon kaos Anda. Mengutamakan kualitas dan kepuasan pelanggan sejak 2025.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h5 class="footer-heading">Navigasi</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="portfolio.html">Portofolio</a></li>
+                        <li><a href="harga.html">Daftar Harga</a></li>
+                        <li><a href="pesan.html">Cara Pesan</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6 mb-4">
+                    <h5 class="footer-heading">Kontak</h5>
+                    <ul class="list-unstyled small">
+                        <li>
+                            <a href="https://wa.me/6285179712235" target="_blank">
+                                <i class="bi bi-whatsapp me-2"></i> 0851-7971-2235
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="mailto:info@sablonku.com">
+                                <i class="bi bi-envelope me-2"></i> info@sablonku.com
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://maps.app.goo.gl/yPurS4fNJNAn8AgRA" target="_blank">
+                                <i class="bi bi-geo-alt me-2"></i> Jl. Oki No. 06 Ciputat
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <div class="text-center small">
+                <p>&copy; 2025 Sablonku. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
